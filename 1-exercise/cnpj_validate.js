@@ -1,46 +1,46 @@
 var cnpj
 function validate(cnpj) {
-    cnpj = cnpj.replace(/[^\d]+/g, ''); //Exclui pontos e barras entre os números do cnpj
-     
-    //Se o campo cnpj estiver em branco retorna false
-    if (cnpj == '') { 
+    //Remove dots and slashs between numbers from CNPJ
+    cnpj = cnpj.replace(/[^\d]+/g, '');
+
+    //If the field CNPJ is blank, return false 
+    if (cnpj == '') {
         return false;
     }
 
-    //Não considera mais ou menos que 14 números para cnpj
-    if(cnpj.length !== 14){
+    //Invalidate more ou less that 14 numbers
+    if (cnpj.length !== 14) {
         return false;
     }
 
-    //Desconsidera os números repetidos
+    //Disregards the duplicated numbers  
     const equals = [...new Set(cnpj)]
-    if (equals.length === 1){
+    if (equals.length === 1) {
         return false
-    } 
+    }
 
+    size = cnpj.length - 2
+    number = cnpj.substring(0, size);
+    digit = cnpj.substring(size);
+    add = 0;
 
-     size = cnpj.length - 2
-     number = cnpj.substring(0, size);
-     digit = cnpj.substring(size);
-     add = 0;
-     
-     x = size - 7;
-    
-     //loop que faz a multiplicação entre os números do cnpj
-     for(i = size; i >= 1; i--){
+    x = size - 7;
+
+    //loop that multiplies the CNPJ numbers 
+    for (i = size; i >= 1; i--) {
         add = add + number.charAt(size - i) * x--;
 
-        if(x < 2){
+        if (x < 2) {
             x = 9;
         }
-     }
+    }
 
-     //Confirmação se o resto da da divisão menor que zero para retornar o valor do primeiro dígito
-     confirm = add % 11 < 2 ? 0 : 11 - add % 11;
+    //Confirmation if the division remainder is less than zero to return the first digit value
+    confirm = add % 11 < 2 ? 0 : 11 - add % 11;
 
-     if(confirm != digit.charAt(0)){
-         return false;
-     }
+    if (confirm != digit.charAt(0)) {
+        return false;
+    }
 
     size = size + 1;
 
@@ -50,38 +50,35 @@ function validate(cnpj) {
 
     x = size - 7;
 
-    //loop que faz a multiplicação entre os números do cnpj
-    for(i = size; i >= 1; i--){
+    //loop that multiplies the CNPJ numbers 
+    for (i = size; i >= 1; i--) {
         add = add + number.charAt(size - i) * x--;
 
-        if(x < 2){
+        if (x < 2) {
             x = 9;
         }
     }
 
-//Confirmação se o resto da da divisão menor que zero para retornar o valor do segundo dígito 
+    //Confirmation if the division remainder is less than zero to return the first digit value
     confirm = add % 11 < 2 ? 0 : 11 - add % 11;
 
-    if(confirm != digit.charAt(1)){
+    if (confirm != digit.charAt(1)) {
         return false;
     }
     return true;
-
-
-
- 
 }
-//Função que vai responder se é válido ou não
-function cnpjResult(y){
-    if(!validate(y.value)){
+
+//Notify if it is valid or not  
+function cnpjResult(y) {
+    if (!validate(y.value)) {
         alert('CNPJ inválido')
 
         y.value = ''
     }
-    else{
+    else {
         alert('CNPJ VÁLIDO')
         y.value = ''
     }
-    
-   
+
+
 }

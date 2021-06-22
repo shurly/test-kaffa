@@ -9,6 +9,7 @@ Imagens funcionando:
 
 <img src="image-test-kaffa/1-exercise-invalido.png" />
 <img src="image-test-kaffa/1-exercise-valido.png" />
+<img src="gifs-test-kaffa/1-exercise.gif" />
 
 ######################################################################################################
 
