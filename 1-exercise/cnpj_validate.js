@@ -71,13 +71,12 @@ function validate(cnpj) {
 //Notify if it is valid or not  
 function cnpjResult(y) {
     if (!validate(y.value)) {
-        alert('CNPJ inválido')
-
-        y.value = ''
+        alert('CNPJ inválido');
+        y.value = '';
     }
     else {
-        alert('CNPJ VÁLIDO')
-        y.value = ''
+        alert('CNPJ VÁLIDO');
+        y.value = '';
     }
 
 

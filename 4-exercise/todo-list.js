@@ -4,7 +4,7 @@ let db = [];
 const getDB = () => JSON.parse(localStorage.getItem('list')) ?? [];
 const setDB = (db) => localStorage.setItem('list', JSON.stringify(db));
 
-//Cria a tarefa
+//Create Task
 const createTask = (tasks, status, index) => {
     const task = document.createElement('label');
     task.classList.add('item');
@@ -13,23 +13,19 @@ const createTask = (tasks, status, index) => {
         <div>${tasks}</div>
         <input type="button" class="btn btn-sm" value="X" data-index=${index}>  
     `
-
     document.getElementById('list').appendChild(task);
 }
 
 //Update Screen with new data 
 const render = () => {
-    clearTasks();
-    const db = getDB();
-    db.forEach((task, index) => createTask(task.task, task.status, index));
-}
-
-//Clear Tasks   
-const clearTasks = () => {
+    //Clear Tasks 
     const list = document.getElementById('list');
     while (list.firstChild) {
         list.removeChild(list.lastChild);
     }
+
+    const db = getDB();
+    db.forEach((task, index) => createTask(task.task, task.status, index));
 }
 
 //Information insert through added input 
@@ -53,12 +49,12 @@ const clickTask = (et) => {
     //Button delete task 
     if (el.type === 'button') {
         const index = el.dataset.index;
-        //deleteTask(index);
         const db = getDB();
         db.splice(index, 1);
         setDB(db);
         render();
     }
+
     // Change the status: checked/not checked
     else if (el.type === 'checkbox') {
         const index = el.dataset.index;
@@ -67,7 +63,6 @@ const clickTask = (et) => {
         setDB(db);
         render();
     }
-
 }
 
 document.getElementById('newTask').addEventListener('keypress', insertTask);
