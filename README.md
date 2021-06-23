@@ -99,7 +99,7 @@ Imagens funcionando:
 Exercício 7 - Diagram and SQL
 
 O desenho das tabelas estão com o nome de database-diagram.png no diretório 7-exercise.
-Foi colocado em um arquivo .txt os códigos SQL para listar PEDIDOS com número de itens.
+Foram colocados em um arquivo .txt os códigos SQL para criar, popular e criar a view que lista a tabela ORDERS com a coluna adicional 'número de itens'.
 
 Segue imagem das tabelas:
 <img src="7-exercise/database-diagram.png" />
