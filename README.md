@@ -1,6 +1,6 @@
 # test-kaffa
 
-Foi utilizado IDE Visual Studio Code, liguagem JavaScript e navegador Chrome para visualizar os resultados.
+Foi utilizada IDE Visual Studio Code, liguagem JavaScript e navegador Chrome para visualizar os resultados.
 Para baixar e ver os resultados: Faça o clone do projeto no github (é preciso ter o git instalado na máquina). A pasta que será baixada é a test-kaffa e nela estarão os diretórios com o número do exercício de acordo com o teste enviado. Dentro desses diretórios terão os arquivos .js e .html. Ao clicar em abrir com o navegador, o arquivo .html abrirá a aplicação. Algumas estão diretamente na tela, outras precisam que o usuário inspecione a tela (apertando a tecla F12 do teclado) e veja na aba CONSOLE o resultado. 
 Caso possua a IDE Visual Studio Code e quiser rodar o projeto diretamente por ele também é possível (verificar se possui as configurações e extensões que permitam isso). Nos exercícios 2 e 3 além de ver os resultado pelo CONSOLE de inspecionar, é possível ver os resultados através do terminal. Mais detalhes estão descritos na explicação de cada exercício.
 
