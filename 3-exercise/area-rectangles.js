@@ -18,6 +18,25 @@ function areaOfIntersection(A, B) {
     var By1 = B[1];
     var By2 = B[3];
 
+    //Case the user insert the points in a wrong order
+    if (Ax2 < Ax1) {
+        Ax2 = A[0];
+        Ax1 = A[2];
+    }
+    if (Ay2 < Ay1) {
+        Ay2 = A[1];
+        Ay1 = A[3];
+    }
+
+    if (Bx2 < Bx1) {
+        Bx2 = B[0];
+        Bx1 = B[2];
+    }
+    if (By2 < By1) {
+        By2 = B[1];
+        By1 = B[3];
+    }
+
     //////////////////////////////////ANALYSIS ON THE X AXIS///////////////////////////////
     if (Ax2 >= Bx2) {
         if (Bx1 >= Ax1) {
